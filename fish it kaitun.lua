@@ -4,29 +4,8 @@ local Character = Player.Character or Player.CharacterAdded:Wait()
 local HRP = Character:WaitForChild("HumanoidRootPart")
 local Humanoid = Character:WaitForChild("Humanoid")
 
-function antiafk()
+function allinoneloop()
         --loop anti afk
-    while true do
-        wait(5) -- รอ 5 นาที (300 วินาที)
-        
-        -- กระโดด 1 ครั้ง
-        if Humanoid then
-            Humanoid.Jump = true
-        end
-    end
-end
-
-
-function instantfishing()
-        --loop fish
-    while true do
-        game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RE/FishingCompleted"):FireServer()
-        wait(0.1)
-    end
-end
-
-
-function buyrod()
     while true do
         --Demascus Rod 3k coins
         local args = {
@@ -57,12 +36,39 @@ function buyrod()
         126
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RF/PurchaseFishingRod"):InvokeServer(unpack(args))
-        wait(1)
-    end
-end
+        wait(0.1)
 
-function buybobber()
-    while true do
+        --Demascus Rod 3k coins
+        local args = {
+        77
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RF/PurchaseFishingRod"):InvokeServer(unpack(args))
+        wait(0.1)
+
+        --lucky Rod
+        local args = {
+	    4
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RF/PurchaseFishingRod"):InvokeServer(unpack(args))
+        wait(0.1)
+        --steampunk Rod 250k coins
+        local args = {
+        6
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RF/PurchaseFishingRod"):InvokeServer(unpack(args))
+        wait(0.1)
+
+        --Astral Rod 1m coins
+
+        wait(0.1)
+
+        --Ares Rod 3m coins
+        local args = {
+        126
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RF/PurchaseFishingRod"):InvokeServer(unpack(args))
+        wait(1)
+        
         --nature bait 83.5k
         local args = {
 	    17
@@ -76,6 +82,11 @@ function buybobber()
         game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RF/PurchaseBait"):InvokeServer(unpack(args))
 
         wait(1)
+
+        -- กระโดด 1 ครั้ง
+        if Humanoid then
+            Humanoid.Jump = true
+        end
     end
 end
 
@@ -125,11 +136,12 @@ function Starter()
     }
     game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RF/UpdateAutoFishingState"):InvokeServer(unpack(args))
 
+    while true do
+        game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RE/FishingCompleted"):FireServer()
+        wait(0.1)
+    end
 end
 
-antiafk()
-instantfishing()
-buyrod()
-buybobber()
 Starter()
+allinoneloop()
 
