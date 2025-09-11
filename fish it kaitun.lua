@@ -138,10 +138,11 @@ function Starter()
 
     while true do
         game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_net@0.2.0"):WaitForChild("net"):WaitForChild("RE/FishingCompleted"):FireServer()
-        wait(0.1)
+        wait(1)
     end
 end
 
 Starter()
 allinoneloop()
+
 
